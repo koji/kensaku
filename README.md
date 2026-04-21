@@ -26,6 +26,19 @@ kensaku check --path ".github/workflows/release.yml"
 kensaku fix --path ".github/workflows/*.yml"
 ```
 
+### help command
+```shell
+kensaku -h
+Usage: node --experimental-strip-types ./src/cli.ts <check|fix> [options]
+
+Options:
+  --path <glob>       Workflow glob to scan
+  --root <dir>        Root directory to scan
+  --repo <owner/name> Reserved for future use
+  --major-only        Only update major tags like v4 (default)
+  --no-major-only     Allow non-major refs such as v4.2.1
+```
+
 For local development:
 
 ```shell
