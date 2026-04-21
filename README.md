@@ -1,46 +1,48 @@
 # sha-checker
 
-GitHub Actions の `uses:` を走査して、タグ指定を SHA pin へ変換する候補を表示・適用する CLI です。
+[日本語版はこちら](./README_JA.md)
 
-## インストール
+`sha-checker` is a CLI that scans GitHub Actions `uses:` entries and shows or applies updates that pin action references to commit SHAs.
+
+## Installation
 
 ```bash
 npm install -g sha-checker
 ```
 
-## 使い方
+## Usage
 
 ```bash
 sha-checker check
 sha-checker fix
 ```
 
-既定ではカレントディレクトリ配下の `.github/workflows/**/*.yml` / `.yaml` を対象にします。
+By default, it scans `.github/workflows/**/*.yml` and `.github/workflows/**/*.yaml` under the current directory.
 
 ```bash
 sha-checker check --path ".github/workflows/release.yml"
 sha-checker fix --path ".github/workflows/*.yml"
 ```
 
-ローカル開発では以下を使います。
+For local development:
 
 ```bash
 npm run build
 node ./dist/cli.js check
 ```
 
-## 挙動
+## Behavior
 
-- `actions/checkout@v4` のような `owner/repo@ref` を検出
-- `docker://...` と `./...` は無視
-- `@sha # v4` のようにコメントで元の ref が残っていれば、その ref を基準に更新
-- `--major-only` が既定で有効。`v4` のようなメジャータグのみ自動更新対象
+- Detects `owner/repo@ref` entries such as `actions/checkout@v4`
+- Ignores `docker://...` and `./...`
+- If an action is already pinned like `@sha # v4`, it uses the comment as the source ref for refreshes
+- `--major-only` is enabled by default, so only major tags like `v4` are updated automatically
 
-## 認証
+## Authentication
 
-GitHub API の解決には `GITHUB_TOKEN` か `GH_TOKEN` が使えます。未設定でも試行しますが、レート制限にかかりやすくなります。
+GitHub API resolution uses `GITHUB_TOKEN` or `GH_TOKEN` when available. It can run without a token, but you are more likely to hit rate limits.
 
-## npm publish
+## Publishing to npm
 
 ```bash
 npm run build
@@ -48,4 +50,4 @@ npm test
 npm publish --access public
 ```
 
-公開前に `package.json` の `name` と `version` を調整して下さい。
+Adjust `name` and `version` in `package.json` before publishing.
