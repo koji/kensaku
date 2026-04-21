@@ -159,6 +159,19 @@ PS C:\Users\19172\Desktop\dev\Hyouji> kensaku check
   with:    uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
 ```
 
+after running the fix command
+```yaml
+steps:
+      - name: Checkout code
+        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5
+        with:
+          fetch-depth: 0
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2
+        with:
+          bun-version: latest
+```
 
 
 By default, it scans `.github/workflows/**/*.yml` and `.github/workflows/**/*.yaml` under the current directory.
