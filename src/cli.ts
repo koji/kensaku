@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+import { readFileSync } from 'node:fs';
+
 import {
   applyChanges,
   createGitHubResolver,
@@ -8,18 +10,30 @@ import {
   parseArgs,
 } from './lib.ts';
 
+const packageJson = JSON.parse(
+  readFileSync(new URL('../package.json', import.meta.url), 'utf8'),
+) as { version?: string };
+
+const VERSION = packageJson.version ?? '0.0.0';
+
 async function main(): Promise<void> {
   if (process.argv.includes('--help') || process.argv.includes('-h')) {
     console.log([
       'Usage: node --experimental-strip-types ./src/cli.ts <check|fix> [options]',
       '',
       'Options:',
+      '  -v, --version       Show CLI version',
       '  --path <glob>       Workflow glob to scan',
       '  --root <dir>        Root directory to scan',
       '  --repo <owner/name> Reserved for future use',
       '  --major-only        Only update major tags like v4 (default)',
       '  --no-major-only     Allow non-major refs such as v4.2.1',
     ].join('\n'));
+    return;
+  }
+
+  if (process.argv.includes('--version') || process.argv.includes('-v')) {
+    console.log(VERSION);
     return;
   }
 
