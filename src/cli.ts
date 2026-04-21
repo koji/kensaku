@@ -6,7 +6,7 @@ import {
   formatReport,
   inspectWorkflows,
   parseArgs,
-} from './lib.ts';
+} from './lib.js';
 
 async function main(): Promise<void> {
   if (process.argv.includes('--help') || process.argv.includes('-h')) {
