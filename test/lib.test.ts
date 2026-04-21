@@ -42,7 +42,7 @@ test('buildPinnedLine emits normalized sha pin form', () => {
 });
 
 test('inspectWorkflows reports unpinned and stale pinned actions', async () => {
-  const rootDir = await mkdtemp(path.join(os.tmpdir(), 'sha-checker-'));
+  const rootDir = await mkdtemp(path.join(os.tmpdir(), 'kensaku-'));
   await mkdir(path.join(rootDir, '.github/workflows'), { recursive: true });
   const workflowPath = path.join(rootDir, '.github/workflows/ci.yml');
   await writeFile(
@@ -85,7 +85,7 @@ test('inspectWorkflows reports unpinned and stale pinned actions', async () => {
 });
 
 test('applyChanges rewrites workflow files in place', async () => {
-  const rootDir = await mkdtemp(path.join(os.tmpdir(), 'sha-checker-'));
+  const rootDir = await mkdtemp(path.join(os.tmpdir(), 'kensaku-'));
   await mkdir(path.join(rootDir, '.github/workflows'), { recursive: true });
   const workflowPath = path.join(rootDir, '.github/workflows/ci.yml');
   await writeFile(workflowPath, "- uses: 'actions/checkout@v4'\n", 'utf8');

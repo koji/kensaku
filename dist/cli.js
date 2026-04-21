@@ -11,7 +11,7 @@ import {
 async function main() {
   if (process.argv.includes('--help') || process.argv.includes('-h')) {
     console.log([
-      'Usage: sha-checker <check|fix> [options]',
+      'Usage: kensaku <check|fix> [options]',
       '',
       'Options:',
       '  --path <glob>       Workflow glob to scan',

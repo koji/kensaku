@@ -1,27 +1,27 @@
-# sha-checker
+# kensaku
 
 [日本語版はこちら](./README_JA.md)
 
-`sha-checker` is a CLI that scans GitHub Actions `uses:` entries and shows or applies updates that pin action references to commit SHAs.
+`kensaku` is a CLI that scans GitHub Actions `uses:` entries and shows or applies updates that pin action references to commit SHAs.
 
 ## Installation
 
 ```bash
-npm install -g sha-checker
+npm install -g kensaku
 ```
 
 ## Usage
 
 ```bash
-sha-checker check
-sha-checker fix
+kensaku check
+kensaku fix
 ```
 
 By default, it scans `.github/workflows/**/*.yml` and `.github/workflows/**/*.yaml` under the current directory.
 
 ```bash
-sha-checker check --path ".github/workflows/release.yml"
-sha-checker fix --path ".github/workflows/*.yml"
+kensaku check --path ".github/workflows/release.yml"
+kensaku fix --path ".github/workflows/*.yml"
 ```
 
 For local development:

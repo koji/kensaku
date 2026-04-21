@@ -5,13 +5,20 @@
   "private": false,
   "license": "MIT",
   "type": "module",
-  "keyword":["kenskau","検索","SHA","GitHub","GitHub Actions"]
+  "keywords": [
+    "kensaku",
+    "search",
+    "sha",
+    "github",
+    "github-actions"
+  ],
   "bin": {
-    "sha-checker": "./dist/cli.js"
+    "kensaku": "./dist/cli.js"
   },
   "files": [
     "dist",
-    "README.md"
+    "README.md",
+    "README_JA.md"
   ],
   "exports": {
     ".": "./dist/lib.js"

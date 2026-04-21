@@ -263,7 +263,7 @@ export function createGitHubResolver({
     const endpoint = `https://api.github.com/repos/${owner}/${repo}/commits/${encodeURIComponent(ref)}`;
     const headers = {
       Accept: 'application/vnd.github+json',
-      'User-Agent': 'sha-checker',
+      'User-Agent': 'kensaku',
     };
     if (token) {
       headers.Authorization = `Bearer ${token}`;

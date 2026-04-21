@@ -369,7 +369,7 @@ export function createGitHubResolver({
     const endpoint = `https://api.github.com/repos/${owner}/${repo}/commits/${encodeURIComponent(ref)}`;
     const headers: Record<string, string> = {
       Accept: 'application/vnd.github+json',
-      'User-Agent': 'sha-checker',
+      'User-Agent': 'kensaku',
     };
 
     if (token) {
