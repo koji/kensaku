@@ -42,12 +42,4 @@ node ./dist/cli.js check
 
 GitHub API resolution uses `GITHUB_TOKEN` or `GH_TOKEN` when available. It can run without a token, but you are more likely to hit rate limits.
 
-## Publishing to npm
-
-```bash
-npm run build
-npm test
-npm publish --access public
-```
-
 Adjust `name` and `version` in `package.json` before publishing.
