@@ -1,0 +1,34 @@
+{
+  "name": "kensaku",
+  "version": "0.1.0",
+  "description": "CLI to pin GitHub Actions uses references to commit SHAs.",
+  "private": false,
+  "license": "MIT",
+  "type": "module",
+  "keyword":["kenskau","検索","SHA","GitHub","GitHub Actions"]
+  "bin": {
+    "sha-checker": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "exports": {
+    ".": "./dist/lib.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "check": "node ./dist/cli.js check",
+    "fix": "node ./dist/cli.js fix",
+    "prepack": "npm run build && npm test",
+    "test": "node --experimental-strip-types --test test/**/*.test.ts",
+    "test:dist": "node --test test-dist/**/*.test.js"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.21",
+    "typescript": "^5.8.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
