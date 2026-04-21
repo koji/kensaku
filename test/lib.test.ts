@@ -23,6 +23,17 @@ test('parseUsesLine parses quoted uses values', () => {
   });
 });
 
+test('parseUsesLine parses indented uses values without inline dash', () => {
+  const parsed = parseUsesLine("        uses: actions/checkout@v5");
+  assert.deepEqual(parsed, {
+    prefix: '        ',
+    action: 'actions/checkout',
+    ref: 'v5',
+    comment: '',
+    original: "        uses: actions/checkout@v5",
+  });
+});
+
 test('parseUsesLine ignores local and docker actions', () => {
   assert.equal(parseUsesLine('- uses: ./local-action'), null);
   assert.equal(parseUsesLine('- uses: docker://alpine:3.20'), null);

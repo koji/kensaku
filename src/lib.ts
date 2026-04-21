@@ -149,7 +149,7 @@ export async function findWorkflowFiles(rootDir: string, pattern = WORKFLOW_GLOB
 }
 
 export function parseUsesLine(line: string): ParsedUsesLine | null {
-  const match = line.match(/^(\s*-\s*)?uses:\s*(.+?)\s*$/);
+  const match = line.match(/^(\s*(?:-\s*)?)uses:\s*(.+?)\s*$/);
   if (!match) {
     return null;
   }
