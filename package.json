@@ -1,8 +1,16 @@
 {
   "name": "kensaku",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "CLI to pin GitHub Actions uses references to commit SHAs.",
   "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/koji/kensaku"
+  },
+  "homepage": "https://github.com/koji/kensaku",
+  "bugs": {
+    "url": "https://github.com/koji/kensaku/issues"
+  },
   "license": "MIT",
   "type": "module",
   "keywords": [
