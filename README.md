@@ -17,6 +17,7 @@ bun add -g kensaku
 ```shell
 kensaku check
 kensaku fix
+kensaku -v / --version
 ```
 
 By default, it scans `.github/workflows/**/*.yml` and `.github/workflows/**/*.yaml` under the current directory.

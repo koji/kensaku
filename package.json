@@ -1,6 +1,6 @@
 {
   "name": "kensaku",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "CLI to pin GitHub Actions uses references to commit SHAs.",
   "private": false,
   "license": "MIT",

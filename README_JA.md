@@ -17,6 +17,7 @@ bun add -g kensaku
 ```shell
 kensaku check
 kensaku fix
+kensaku -v / --version
 ```
 
 既定ではカレントディレクトリ配下の `.github/workflows/**/*.yml` / `.yaml` を対象にします。
